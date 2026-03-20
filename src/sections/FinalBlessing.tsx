@@ -89,21 +89,21 @@ export function FinalBlessing() {
                 data-final-line
                 className="mt-5 font-display text-3xl font-semibold leading-tight text-parchment md:text-[2.8rem]"
               >
-                Нооруздун жылуулугу жүрөгүңүздө кала берсин
+                Майрамдын жарыгы жүрөгүңүздө кала берсин
               </h2>
               <p
                 data-final-line
                 className="mt-6 max-w-3xl font-body text-base leading-8 text-cream/80 md:text-xl"
               >
-                Бул Нооруз үйүңүздөргө жаңы дем, жүрөгүңүздөргө жарык үмүт, дасторконуңуздарга мол береке
-                жана ар бир жаңы күнүңүздөргө көктөмдөй жандуу маанай алып келсин. Жакындарыңыздар менен
-                бөлүшкөн ар бир кубаныч эстеликке айланып, бул майрам узак жылуулук болуп сакталсын.
+                Бул Орозо Айт үйүңүздөргө таттуулук, жүрөгүңүздөргө сабыр, дасторконуңуздарга береке жана
+                ар бир жаңы күнүңүздөргө мээрим алып келсин. Жакындарыңыздар менен бөлүшкөн ар бир кубаныч
+                эстеликке айланып, бул майрам узак жылуулук болуп сакталсын.
               </p>
               <p
                 data-final-line
                 className="mt-8 font-display text-sm font-semibold uppercase tracking-[0.35em] text-gold/95"
               >
-                Нооруз кут болсун!
+                Айт маарек болсун!
               </p>
             </div>
 
@@ -115,7 +115,7 @@ export function FinalBlessing() {
               </div>
               <div data-final-line>
                 <MagneticButton href="#story" className="w-full justify-center md:w-auto">
-                  Ирмемдерди көрүү
+                  Кадрларды көрүү
                 </MagneticButton>
               </div>
             </div>

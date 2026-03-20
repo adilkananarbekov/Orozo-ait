@@ -47,7 +47,7 @@ export function BlessingPanel({ index, title, preview, imageSrc, onOpen }: Bless
               {String(index + 1).padStart(2, '0')}
             </span>
             <p className="font-body text-[10px] font-semibold uppercase tracking-[0.35em] text-gold/75">
-              Тилек
+              Бата
             </p>
           </div>
 

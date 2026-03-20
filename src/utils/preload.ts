@@ -1,7 +1,15 @@
 import { publicPath } from './publicPath'
 
-// Keep startup light on mobile: below-the-fold cards and story images stay lazy-loaded.
-export const PRELOAD_IMAGE_URLS = [publicPath('assets/moodboard-hero.png')]
+const SCENE = [
+  publicPath('assets/scene/lamp.png'),
+  publicPath('assets/scene/crescent.png'),
+  publicPath('assets/scene/text-kg.png'),
+  publicPath('assets/scene/mosque-desktop.png'),
+  publicPath('assets/scene/mosque-mobile.png'),
+]
+
+// Keep startup light: below-the-fold sections stay lazy-loaded.
+export const PRELOAD_IMAGE_URLS = [...SCENE]
 
 function loadImage(src: string): Promise<void> {
   return new Promise((resolve) => {

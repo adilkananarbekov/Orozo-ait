@@ -53,7 +53,7 @@ export const LoadingScreen = forwardRef<HTMLDivElement, LoadingScreenProps>(func
       role="status"
       aria-live="polite"
       aria-busy="true"
-      aria-label="Нооруз баракчасы жүктөлүүдө"
+      aria-label="Орозо Айт баракчасы жүктөлүүдө"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-soft-light"
@@ -90,11 +90,11 @@ export const LoadingScreen = forwardRef<HTMLDivElement, LoadingScreenProps>(func
         className="px-6 text-center font-display text-3xl font-bold tracking-tight md:text-5xl [text-shadow:0_0_32px_rgba(230,192,104,0.35)]"
       >
         <span className="bg-gradient-to-b from-[#fff6d4] via-gold to-[#c9952c] bg-clip-text text-transparent">
-          Нооруз
+          Орозо Айт
         </span>
       </h1>
       <p ref={subRef} className="mt-4 max-w-md px-8 text-center font-body text-sm text-cream/65 md:text-base">
-        Күндүн нуру, көктөм жана тилектер даярдалууда…
+        Чырак нуру, ай жана баталар даярдалууда…
       </p>
 
       <div className="mt-14 h-px w-[min(280px,70vw)] overflow-hidden rounded-full bg-white/10">

@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
-import { useMobilePerformanceMode } from '../hooks/useMobilePerformanceMode'
 import { gsap } from '../utils/gsapContext'
+import { useMobilePerformanceMode } from '../hooks/useMobilePerformanceMode'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 
 type MagneticButtonProps = {
