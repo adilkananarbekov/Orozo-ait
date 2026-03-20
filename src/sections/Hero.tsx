@@ -58,20 +58,22 @@ const STAR_PARTICLES = [
 
 const SCENE_LAMPS = [
   {
-    shellClassName: 'absolute left-1/2 top-[1%] z-30 w-[7.75rem] -translate-x-1/2 md:top-0 md:w-[10rem]',
+    shellClassName:
+      'absolute left-1/2 top-[2.5%] z-30 w-[6.25rem] -translate-x-1/2 sm:w-[7.25rem] md:top-0 md:w-[10rem]',
     hangerClassName:
-      'absolute left-1/2 -top-[5.6rem] h-[5.6rem] w-px -translate-x-1/2 bg-gradient-to-b from-[#f7dfa0]/90 via-[#f7dfa0]/55 to-transparent',
+      'absolute left-1/2 -top-[4.7rem] h-[4.7rem] w-px -translate-x-1/2 bg-gradient-to-b from-[#f7dfa0]/90 via-[#f7dfa0]/55 to-transparent md:-top-[5.6rem] md:h-[5.6rem]',
     anchorClassName:
-      'absolute left-1/2 -top-[5.95rem] h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-gold/45 bg-[#1c1228]/90 shadow-[0_0_10px_rgba(247,223,160,0.35)]',
+      'absolute left-1/2 -top-[5.05rem] h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-gold/45 bg-[#1c1228]/90 shadow-[0_0_10px_rgba(247,223,160,0.35)] md:-top-[5.95rem]',
     glowClassName:
-      'absolute left-1/2 top-[24%] h-36 w-36 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,204,104,0.55)_0%,rgba(255,204,104,0.18)_35%,transparent_72%)] blur-2xl md:h-48 md:w-48',
+      'absolute left-1/2 top-[24%] h-28 w-28 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,204,104,0.55)_0%,rgba(255,204,104,0.18)_35%,transparent_72%)] blur-2xl sm:h-32 sm:w-32 md:h-48 md:w-48',
     swing: 6,
     y: 0,
     delay: 1.1,
     opacity: 1,
   },
   {
-    shellClassName: 'absolute left-[9%] top-[8%] z-30 w-[4.75rem] md:left-[15%] md:top-[11%] md:w-[6.25rem]',
+    shellClassName:
+      'absolute left-[9%] top-[8%] z-30 hidden w-[4.75rem] md:left-[15%] md:top-[11%] md:block md:w-[6.25rem]',
     hangerClassName:
       'absolute left-1/2 -top-[4.5rem] h-[4.5rem] w-px -translate-x-1/2 bg-gradient-to-b from-[#f7dfa0]/90 via-[#f7dfa0]/55 to-transparent',
     anchorClassName:
@@ -84,7 +86,8 @@ const SCENE_LAMPS = [
     opacity: 0.96,
   },
   {
-    shellClassName: 'absolute right-[9%] top-[8%] z-30 w-[4.75rem] md:right-[15%] md:top-[11%] md:w-[6.25rem]',
+    shellClassName:
+      'absolute right-[9%] top-[8%] z-30 hidden w-[4.75rem] md:right-[15%] md:top-[11%] md:block md:w-[6.25rem]',
     hangerClassName:
       'absolute left-1/2 -top-[4.5rem] h-[4.5rem] w-px -translate-x-1/2 bg-gradient-to-b from-[#f7dfa0]/90 via-[#f7dfa0]/55 to-transparent',
     anchorClassName:
@@ -454,12 +457,12 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="relative z-30 mx-auto flex min-h-[100dvh] max-w-7xl flex-col px-5 pb-12 pt-5 md:px-10 md:pb-16 md:pt-7">
-        <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.45em] text-[#f7dfa0]/60 md:text-[11px]">
+      <div className="relative z-30 mx-auto flex min-h-[100dvh] max-w-7xl flex-col px-4 pb-10 pt-4 sm:px-5 sm:pb-12 sm:pt-5 md:px-10 md:pb-16 md:pt-7">
+        <div className="flex items-center justify-between text-[9px] uppercase tracking-[0.36em] text-[#f7dfa0]/60 sm:text-[10px] sm:tracking-[0.45em] md:text-[11px]">
           <div className="flex items-center gap-3">
             <div
               ref={crescentRef}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-gold/15 bg-[#160c24]/58 p-1.5 shadow-[0_0_24px_rgba(255,214,120,0.1)] backdrop-blur-md md:h-14 md:w-14 md:p-2"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/15 bg-[#160c24]/58 p-1.5 shadow-[0_0_24px_rgba(255,214,120,0.1)] backdrop-blur-md sm:h-12 sm:w-12 md:h-14 md:w-14 md:p-2"
             >
               <img
                 src={CRESCENT_URL}
@@ -469,17 +472,17 @@ export function Hero() {
                 draggable={false}
               />
             </div>
-            <span>Кыргызча майрамдык сахна</span>
+            <span className="max-[359px]:hidden">Кыргызча майрамдык сахна</span>
           </div>
-          <span className="hidden sm:inline">Жарык • Береке • Ынтымак</span>
+          <span className="hidden lg:inline">Жарык • Береке • Ынтымак</span>
         </div>
 
         <div className="relative flex-1">
           <div
             ref={sceneRef}
-            className="pointer-events-none absolute inset-x-0 top-0 min-h-[34rem] will-change-transform sm:min-h-[36rem] md:inset-0"
+            className="pointer-events-none absolute inset-x-0 top-0 min-h-[26.5rem] will-change-transform sm:min-h-[31rem] md:inset-0 md:min-h-[36rem]"
           >
-            <div className="absolute inset-x-[4%] top-[1.35rem] z-20 h-16 md:inset-x-[10%] md:top-[1rem] md:h-24">
+            <div className="absolute inset-x-[4%] top-[1.35rem] z-20 hidden h-16 md:inset-x-[10%] md:top-[1rem] md:block md:h-24">
               <svg className="h-full w-full opacity-75" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="hero-wire" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -502,7 +505,7 @@ export function Hero() {
 
             <div
               ref={haloRef}
-              className="absolute left-[60%] top-[14%] h-[22rem] w-[22rem] -translate-x-1/2 rounded-full md:left-[66%] md:top-[16%] md:h-[34rem] md:w-[34rem]"
+              className="absolute left-[58%] top-[12%] h-[15rem] w-[15rem] -translate-x-1/2 rounded-full sm:h-[18rem] sm:w-[18rem] md:left-[66%] md:top-[16%] md:h-[34rem] md:w-[34rem]"
               style={{
                 background:
                   'radial-gradient(circle, rgba(255,228,158,0.22) 0%, rgba(255,228,158,0.1) 26%, rgba(200,155,191,0.08) 44%, transparent 72%)',
@@ -529,7 +532,7 @@ export function Hero() {
 
             <div
               ref={textRef}
-              className="absolute left-[56%] top-[18%] z-40 w-[12.5rem] -translate-x-1/2 md:left-[61%] md:top-[18%] md:w-[21rem]"
+              className="absolute left-[57%] top-[17%] z-40 w-[10rem] -translate-x-1/2 sm:w-[11.5rem] md:left-[61%] md:top-[18%] md:w-[21rem]"
             >
               <img
                 src={TEXT_URL}
@@ -542,7 +545,7 @@ export function Hero() {
 
             <div
               ref={mosqueRef}
-              className="absolute bottom-[1.2rem] left-1/2 z-10 w-[21rem] -translate-x-1/2 sm:w-[24rem] md:left-[62%] md:bottom-[1rem] md:w-[56rem]"
+              className="absolute bottom-[0.35rem] left-1/2 z-10 w-[16.75rem] -translate-x-1/2 sm:bottom-[0.75rem] sm:w-[20rem] md:left-[62%] md:bottom-[1rem] md:w-[56rem]"
             >
               <img
                 src={MOSQUE_DESKTOP_URL}
@@ -554,35 +557,35 @@ export function Hero() {
               <img
                 src={MOSQUE_MOBILE_URL}
                 alt=""
-                className="h-auto w-full opacity-82 mix-blend-screen brightness-[0.92] saturate-[0.84] drop-shadow-[0_14px_36px_rgba(10,5,20,0.55)] md:hidden"
+                className="h-auto w-full opacity-62 mix-blend-screen brightness-[0.8] saturate-[0.68] drop-shadow-[0_14px_36px_rgba(10,5,20,0.45)] sm:opacity-72 sm:brightness-[0.86] sm:saturate-[0.76] md:hidden"
                 loading="eager"
                 draggable={false}
               />
             </div>
           </div>
 
-          <div className="relative z-20 pt-[31rem] sm:pt-[34rem] md:flex md:min-h-[calc(100dvh-7.5rem)] md:items-end md:pt-0">
+          <div className="relative z-20 pt-[22rem] sm:pt-[27rem] md:flex md:min-h-[calc(100dvh-7.5rem)] md:items-end md:pt-0">
             <div
               ref={copyRef}
-              className="max-w-md rounded-[2rem] border border-[#f7dfa0]/12 bg-[#12081f]/36 p-5 shadow-bloom backdrop-blur-xl md:mb-6 md:max-w-[24rem] md:p-6"
+              className="mx-auto w-full max-w-[22rem] rounded-[1.75rem] border border-[#f7dfa0]/12 bg-[#12081f]/72 p-4 shadow-bloom backdrop-blur-xl sm:max-w-md sm:rounded-[2rem] sm:p-5 md:mx-0 md:mb-6 md:max-w-[24rem] md:bg-[#12081f]/36 md:p-6"
             >
               <p className="hero-copy-line text-xs uppercase tracking-[0.4em] text-gold/80">
                 Касиеттүү майрам
               </p>
-              <h1 className="hero-copy-line mt-3 font-display text-3xl font-bold leading-tight text-parchment md:text-5xl">
+              <h1 className="hero-copy-line mt-3 font-display text-[2.1rem] font-bold leading-[0.96] text-parchment sm:text-3xl md:text-5xl">
                 Орозо Айт кут болсун
               </h1>
-              <p className="hero-copy-line mt-4 text-sm leading-7 text-cream/85 md:text-base">
+              <p className="hero-copy-line mt-4 text-[0.98rem] leading-8 text-cream/85 sm:text-sm sm:leading-7 md:text-base">
                 Жүрөгүңүздөргө тынчтык, үйүңүздөргө береке, дасторконуңуздарга кубаныч жана
                 жакындарыңыздарга нур толсун.
               </p>
               <div className="hero-copy-line mt-6 flex flex-wrap gap-4">
                 <MagneticButton href="#story">Майрамдык ирмемдер</MagneticButton>
               </div>
-              <ul className="mt-7 flex flex-wrap gap-2.5 md:gap-3">
+              <ul className="mt-6 flex flex-wrap gap-2.5 md:mt-7 md:gap-3">
                 {TAGS.map((label) => (
                   <li key={label}>
-                    <span className="hero-tag inline-flex items-center rounded-full border border-gold/20 bg-[#1a0e25]/78 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.28em] text-[#f7e9bf] md:text-xs">
+                    <span className="hero-tag inline-flex items-center rounded-full border border-gold/20 bg-[#1a0e25]/78 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.24em] text-[#f7e9bf] sm:text-[11px] sm:tracking-[0.28em] md:text-xs">
                       <span className="mr-2 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-amber to-gold shadow-[0_0_10px_rgba(240,168,80,0.9)]" />
                       {label}
                     </span>
@@ -594,7 +597,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-scroll-hint pointer-events-none absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/60">
+      <div className="hero-scroll-hint pointer-events-none absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-1.5 text-gold/60 sm:bottom-7 sm:gap-2">
         <span className="text-[10px] uppercase tracking-[0.45em]">Төмөн жылдырыңыз</span>
         <svg
           className="hero-scroll-chevron h-6 w-6 text-gold"

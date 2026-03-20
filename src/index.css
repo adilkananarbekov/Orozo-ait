@@ -133,6 +133,7 @@ body::-webkit-scrollbar-corner {
   bottom: 0;
   height: clamp(11rem, 24vw, 19rem);
   overflow: hidden;
+  opacity: 0.96;
 }
 
 .global-backdrop__skyline-glow {
@@ -168,12 +169,14 @@ body::-webkit-scrollbar-corner {
   color: rgba(16, 9, 25, 0.84);
   opacity: 0.95;
   transform: translateY(1.3rem) scaleY(0.9);
+  transform-origin: center bottom;
   filter: blur(0.35px);
 }
 
 .skyline--front {
   color: rgba(26, 13, 39, 0.92);
   opacity: 0.98;
+  transform-origin: center bottom;
   filter: drop-shadow(0 -18px 28px rgba(0, 0, 0, 0.16));
 }
 
@@ -328,10 +331,51 @@ body::-webkit-scrollbar-corner {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1180px) {
   .side-ornament {
     display: none;
   }
+}
+
+@media (max-width: 1024px) {
+  .global-backdrop__skyline {
+    bottom: -0.45rem;
+    height: 6rem;
+    opacity: 0.58;
+  }
+
+  .global-backdrop__skyline-glow {
+    bottom: 1.2rem;
+    width: 92vw;
+    height: 2.8rem;
+    opacity: 0.24;
+    filter: blur(32px);
+  }
+
+  .global-backdrop__skyline-fade {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(10, 5, 16, 0.985) 0%, rgba(10, 5, 16, 0.96) 38%, rgba(10, 5, 16, 0.68) 76%, transparent 100%);
+  }
+
+  .skyline--rear {
+    opacity: 0.28;
+    transform: translateY(2.05rem) scaleY(0.38);
+    filter: blur(2px);
+  }
+
+  .skyline--front {
+    opacity: 0.4;
+    transform: translateY(1.9rem) scaleY(0.48);
+    filter: blur(1.3px);
+  }
+
+  .global-backdrop__mesh {
+    inset-inline: 0.875rem;
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 768px) {
 
   .global-backdrop__mesh {
     inset-inline: 1rem;
@@ -340,22 +384,36 @@ body::-webkit-scrollbar-corner {
 
 @media (max-width: 640px) {
   .global-backdrop__skyline {
-    height: 8.9rem;
-  }
-
-  .global-backdrop__skyline-glow {
-    bottom: 2.2rem;
-    width: 88vw;
-    height: 4.8rem;
+    bottom: -0.85rem;
+    height: 4.4rem;
     opacity: 0.44;
   }
 
+  .global-backdrop__skyline-glow {
+    bottom: 0.8rem;
+    width: 86vw;
+    height: 2rem;
+    opacity: 0.16;
+  }
+
   .skyline--rear {
-    transform: translateY(1rem) scaleY(0.88);
+    opacity: 0.18;
+    transform: translateY(2.15rem) scaleY(0.24);
+    filter: blur(2.4px);
+  }
+
+  .skyline--front {
+    opacity: 0.26;
+    transform: translateY(2rem) scaleY(0.32);
+    filter: blur(1.8px);
+  }
+
+  .global-backdrop__skyline-fade {
+    background: linear-gradient(180deg, rgba(10, 5, 16, 0.99) 0%, rgba(10, 5, 16, 0.97) 42%, rgba(10, 5, 16, 0.82) 80%, transparent 100%);
   }
 
   .global-backdrop__mesh {
     inset: 8% 8%;
-    opacity: 0.11;
+    opacity: 0.07;
   }
 }
