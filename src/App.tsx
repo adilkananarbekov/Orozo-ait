@@ -15,6 +15,161 @@ const SIDE_PATTERN_MARKS = [
   { top: '78%', size: '0.92rem' },
 ] as const
 
+type MinaretProps = {
+  x: number
+  baseY: number
+  width: number
+  shaftHeight: number
+}
+
+type DomeHallProps = {
+  x: number
+  baseY: number
+  width: number
+  bodyHeight: number
+  domeHeight: number
+  domeWidthRatio?: number
+  shoulderHeight?: number
+}
+
+type SteppedPalaceProps = {
+  x: number
+  baseY: number
+  width: number
+  height: number
+}
+
+function Minaret({ x, baseY, width, shaftHeight }: MinaretProps) {
+  const shaftY = baseY - shaftHeight
+  const balconyHeight = Math.max(width * 0.34, 7)
+  const balconyY = shaftY + shaftHeight * 0.34
+  const balconyWidth = width * 1.55
+  const domeBaseY = shaftY
+  const domeWidth = width * 0.72
+  const domeX = x + (width - domeWidth) / 2
+  const domeHeight = width * 1.06
+  const spireHeight = width * 0.9
+  const spireX = x + width * 0.45
+  const topY = domeBaseY - domeHeight - spireHeight
+
+  return (
+    <g>
+      <rect x={x} y={shaftY} width={width} height={shaftHeight} rx={2} />
+      <rect x={x - (balconyWidth - width) / 2} y={balconyY} width={balconyWidth} height={balconyHeight} rx={2} />
+      <path
+        d={`M ${domeX} ${domeBaseY} Q ${x + width / 2} ${domeBaseY - domeHeight} ${domeX + domeWidth} ${domeBaseY} L ${domeX + domeWidth} ${domeBaseY + balconyHeight * 0.8} L ${domeX} ${domeBaseY + balconyHeight * 0.8} Z`}
+      />
+      <rect x={spireX} y={domeBaseY - domeHeight - spireHeight} width={width * 0.1} height={spireHeight} rx={1} />
+      <polygon
+        points={`${x + width / 2},${topY} ${x + width * 0.28},${domeBaseY - domeHeight - spireHeight} ${x + width * 0.72},${domeBaseY - domeHeight - spireHeight}`}
+      />
+    </g>
+  )
+}
+
+function DomeHall({
+  x,
+  baseY,
+  width,
+  bodyHeight,
+  domeHeight,
+  domeWidthRatio = 0.68,
+  shoulderHeight = 0,
+}: DomeHallProps) {
+  const bodyY = baseY - bodyHeight
+  const domeWidth = width * domeWidthRatio
+  const domeX = x + (width - domeWidth) / 2
+  const shoulderWidth = width * 0.18
+  const finialWidth = Math.max(width * 0.03, 4)
+  const finialX = x + width / 2 - finialWidth / 2
+
+  return (
+    <g>
+      <rect x={x} y={bodyY} width={width} height={bodyHeight} rx={4} />
+      {shoulderHeight > 0 ? (
+        <>
+          <rect x={x + width * 0.06} y={bodyY - shoulderHeight} width={shoulderWidth} height={shoulderHeight} rx={2} />
+          <rect
+            x={x + width - width * 0.06 - shoulderWidth}
+            y={bodyY - shoulderHeight}
+            width={shoulderWidth}
+            height={shoulderHeight}
+            rx={2}
+          />
+        </>
+      ) : null}
+      <path
+        d={`M ${domeX} ${bodyY} Q ${x + width / 2} ${bodyY - domeHeight} ${domeX + domeWidth} ${bodyY} L ${domeX + domeWidth} ${bodyY + 12} L ${domeX} ${bodyY + 12} Z`}
+      />
+      <rect x={finialX} y={bodyY - domeHeight - 18} width={finialWidth} height={18} rx={1} />
+      <polygon
+        points={`${x + width / 2},${bodyY - domeHeight - 30} ${x + width / 2 - width * 0.042},${bodyY - domeHeight - 18} ${x + width / 2 + width * 0.042},${bodyY - domeHeight - 18}`}
+      />
+    </g>
+  )
+}
+
+function SteppedPalace({ x, baseY, width, height }: SteppedPalaceProps) {
+  const baseHeight = height * 0.56
+  const midHeight = height * 0.26
+  const topHeight = height * 0.18
+
+  return (
+    <g>
+      <rect x={x} y={baseY - baseHeight} width={width} height={baseHeight} rx={4} />
+      <rect x={x + width * 0.12} y={baseY - baseHeight - midHeight} width={width * 0.76} height={midHeight} rx={4} />
+      <rect x={x + width * 0.28} y={baseY - height} width={width * 0.44} height={topHeight} rx={3} />
+      <polygon
+        points={`${x + width / 2},${baseY - height - width * 0.1} ${x + width * 0.4},${baseY - height} ${x + width * 0.6},${baseY - height}`}
+      />
+    </g>
+  )
+}
+
+function IslamicSkyline() {
+  return (
+    <div className="global-backdrop__skyline">
+      <div className="global-backdrop__skyline-glow" />
+
+      <svg className="skyline skyline--rear" viewBox="0 0 1600 340" preserveAspectRatio="none">
+        <g fill="currentColor">
+          <rect x="0" y="292" width="1600" height="48" />
+          <SteppedPalace x={28} baseY={292} width={110} height={98} />
+          <DomeHall x={182} baseY={292} width={176} bodyHeight={74} domeHeight={56} shoulderHeight={18} />
+          <Minaret x={392} baseY={292} width={24} shaftHeight={138} />
+          <SteppedPalace x={448} baseY={292} width={108} height={88} />
+          <DomeHall x={592} baseY={292} width={212} bodyHeight={80} domeHeight={72} shoulderHeight={22} />
+          <Minaret x={840} baseY={292} width={24} shaftHeight={146} />
+          <SteppedPalace x={906} baseY={292} width={104} height={84} />
+          <DomeHall x={1046} baseY={292} width={168} bodyHeight={68} domeHeight={54} shoulderHeight={16} />
+          <Minaret x={1254} baseY={292} width={22} shaftHeight={132} />
+          <SteppedPalace x={1312} baseY={292} width={122} height={96} />
+          <DomeHall x={1462} baseY={292} width={112} bodyHeight={60} domeHeight={48} shoulderHeight={14} />
+        </g>
+      </svg>
+
+      <svg className="skyline skyline--front" viewBox="0 0 1600 340" preserveAspectRatio="none">
+        <g fill="currentColor">
+          <rect x="0" y="308" width="1600" height="32" />
+          <Minaret x={36} baseY={308} width={28} shaftHeight={172} />
+          <DomeHall x={92} baseY={308} width={214} bodyHeight={88} domeHeight={76} shoulderHeight={22} />
+          <SteppedPalace x={336} baseY={308} width={108} height={108} />
+          <Minaret x={474} baseY={308} width={28} shaftHeight={182} />
+          <DomeHall x={536} baseY={308} width={258} bodyHeight={100} domeHeight={98} shoulderHeight={24} />
+          <Minaret x={822} baseY={308} width={28} shaftHeight={194} />
+          <SteppedPalace x={890} baseY={308} width={118} height={102} />
+          <DomeHall x={1056} baseY={308} width={218} bodyHeight={84} domeHeight={74} shoulderHeight={20} />
+          <Minaret x={1306} baseY={308} width={26} shaftHeight={166} />
+          <SteppedPalace x={1370} baseY={308} width={116} height={96} />
+          <DomeHall x={1496} baseY={308} width={86} bodyHeight={62} domeHeight={50} shoulderHeight={14} />
+        </g>
+      </svg>
+
+      <div className="global-backdrop__skyline-fade" />
+    </div>
+  )
+}
+
 function GlobalGrain() {
   return (
     <svg
@@ -69,6 +224,7 @@ function GlobalBackdrop() {
       <div className="global-backdrop__shadow global-backdrop__shadow--left" />
       <div className="global-backdrop__shadow global-backdrop__shadow--center" />
       <div className="global-backdrop__shadow global-backdrop__shadow--right" />
+      <IslamicSkyline />
       <div className="global-backdrop__mesh" />
       <div className="global-backdrop__noise lux-noise" />
       <SideOrnament side="left" />
