@@ -136,27 +136,6 @@ body::-webkit-scrollbar-corner {
   opacity: 0.96;
 }
 
-.global-backdrop__skyline-glow {
-  position: absolute;
-  left: 50%;
-  bottom: 3.2rem;
-  width: min(72rem, 82vw);
-  height: clamp(6rem, 14vw, 10rem);
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: radial-gradient(ellipse at center, rgba(153, 102, 58, 0.16) 0%, rgba(153, 102, 58, 0.08) 34%, transparent 74%);
-  filter: blur(42px);
-  opacity: 0.55;
-}
-
-.global-backdrop__skyline-fade {
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 64%;
-  background: linear-gradient(180deg, rgba(10, 5, 16, 0.96) 0%, rgba(10, 5, 16, 0.68) 30%, rgba(10, 5, 16, 0.2) 70%, transparent 100%);
-}
-
 .skyline {
   position: absolute;
   inset-inline: -1%;
@@ -170,14 +149,14 @@ body::-webkit-scrollbar-corner {
   opacity: 0.95;
   transform: translateY(1.3rem) scaleY(0.9);
   transform-origin: center bottom;
-  filter: blur(0.35px);
+  filter: drop-shadow(0 -8px 16px rgba(6, 3, 12, 0.08)) blur(0.25px);
 }
 
 .skyline--front {
   color: rgba(26, 13, 39, 0.92);
   opacity: 0.98;
   transform-origin: center bottom;
-  filter: drop-shadow(0 -18px 28px rgba(0, 0, 0, 0.16));
+  filter: drop-shadow(0 -7px 14px rgba(6, 3, 12, 0.14));
 }
 
 .global-backdrop__mesh {
@@ -344,29 +323,16 @@ body::-webkit-scrollbar-corner {
     opacity: 0.58;
   }
 
-  .global-backdrop__skyline-glow {
-    bottom: 1.2rem;
-    width: 92vw;
-    height: 2.8rem;
-    opacity: 0.24;
-    filter: blur(32px);
-  }
-
-  .global-backdrop__skyline-fade {
-    height: 100%;
-    background: linear-gradient(180deg, rgba(10, 5, 16, 0.985) 0%, rgba(10, 5, 16, 0.96) 38%, rgba(10, 5, 16, 0.68) 76%, transparent 100%);
-  }
-
   .skyline--rear {
     opacity: 0.28;
     transform: translateY(2.05rem) scaleY(0.38);
-    filter: blur(2px);
+    filter: drop-shadow(0 -4px 10px rgba(6, 3, 12, 0.08)) blur(1.6px);
   }
 
   .skyline--front {
     opacity: 0.4;
     transform: translateY(1.9rem) scaleY(0.48);
-    filter: blur(1.3px);
+    filter: drop-shadow(0 -4px 8px rgba(6, 3, 12, 0.12)) blur(1px);
   }
 
   .global-backdrop__mesh {
@@ -389,27 +355,16 @@ body::-webkit-scrollbar-corner {
     opacity: 0.44;
   }
 
-  .global-backdrop__skyline-glow {
-    bottom: 0.8rem;
-    width: 86vw;
-    height: 2rem;
-    opacity: 0.16;
-  }
-
   .skyline--rear {
     opacity: 0.18;
     transform: translateY(2.15rem) scaleY(0.24);
-    filter: blur(2.4px);
+    filter: drop-shadow(0 -3px 8px rgba(6, 3, 12, 0.06)) blur(1.8px);
   }
 
   .skyline--front {
     opacity: 0.26;
     transform: translateY(2rem) scaleY(0.32);
-    filter: blur(1.8px);
-  }
-
-  .global-backdrop__skyline-fade {
-    background: linear-gradient(180deg, rgba(10, 5, 16, 0.99) 0%, rgba(10, 5, 16, 0.97) 42%, rgba(10, 5, 16, 0.82) 80%, transparent 100%);
+    filter: drop-shadow(0 -2px 6px rgba(6, 3, 12, 0.1)) blur(1.2px);
   }
 
   .global-backdrop__mesh {

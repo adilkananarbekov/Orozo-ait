@@ -129,8 +129,6 @@ function SteppedPalace({ x, baseY, width, height }: SteppedPalaceProps) {
 function IslamicSkyline() {
   return (
     <div className="global-backdrop__skyline">
-      <div className="global-backdrop__skyline-glow" />
-
       <svg className="skyline skyline--rear" viewBox="0 0 1600 340" preserveAspectRatio="none">
         <g fill="currentColor">
           <rect x="0" y="292" width="1600" height="48" />
@@ -164,8 +162,6 @@ function IslamicSkyline() {
           <DomeHall x={1496} baseY={308} width={86} bodyHeight={62} domeHeight={50} shoulderHeight={14} />
         </g>
       </svg>
-
-      <div className="global-backdrop__skyline-fade" />
     </div>
   )
 }
