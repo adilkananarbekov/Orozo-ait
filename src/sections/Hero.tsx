@@ -420,8 +420,10 @@ export function Hero() {
         <div className="absolute inset-x-[8%] top-[9%] h-56 rounded-full bg-[radial-gradient(circle,rgba(255,228,158,0.2)_0%,rgba(255,228,158,0.06)_28%,transparent_72%)] blur-3xl md:inset-x-[20%]" />
         <div className="absolute -left-12 top-[22%] h-48 w-48 rounded-full bg-[#c89bbf]/10 blur-[110px] md:h-72 md:w-72" />
         <div className="absolute -right-10 top-[14%] h-56 w-56 rounded-full bg-[#e8983c]/12 blur-[120px] md:h-80 md:w-80" />
-        <div className="absolute bottom-0 left-0 right-0 h-[42%] bg-gradient-to-t from-[#07030d] via-[#09040f]/90 to-transparent" />
-        <div className="absolute bottom-[14%] left-1/2 h-40 w-[92%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,216,151,0.18)_0%,rgba(232,152,60,0.08)_36%,transparent_72%)] blur-3xl md:w-[72%]" />
+        <div className="absolute bottom-[-10%] left-[18%] h-44 w-44 rounded-full bg-[radial-gradient(circle,rgba(8,3,14,0.42)_0%,rgba(8,3,14,0.14)_46%,transparent_76%)] blur-[90px] sm:h-52 sm:w-52 md:h-72 md:w-72" />
+        <div className="absolute bottom-[-12%] right-[14%] h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(8,3,14,0.38)_0%,rgba(8,3,14,0.12)_44%,transparent_76%)] blur-[96px] sm:h-56 sm:w-56 md:h-[19rem] md:w-[19rem]" />
+        <div className="absolute bottom-[8%] left-1/2 h-20 w-[68%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(11,5,18,0.34)_0%,rgba(11,5,18,0.14)_44%,transparent_76%)] blur-3xl sm:h-24 sm:w-[58%] md:bottom-[12%] md:h-32 md:w-[42%]" />
+        <div className="absolute bottom-[14%] left-1/2 h-32 w-[76%] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,216,151,0.12)_0%,rgba(232,152,60,0.05)_34%,transparent_72%)] blur-3xl md:w-[60%]" />
         <div className="absolute left-[56%] top-[28%] h-[14rem] w-[14rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(7,3,13,0.88)_0%,rgba(7,3,13,0.62)_34%,rgba(7,3,13,0.2)_60%,transparent_76%)] blur-3xl md:left-[61%] md:top-[31%] md:h-[20rem] md:w-[21rem]" />
         <div className="absolute inset-0 opacity-[0.26] mix-blend-overlay lux-noise" />
       </div>
