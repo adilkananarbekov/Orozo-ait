@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useRef } from 'react'
 import { gsap } from '../utils/gsapContext'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+import { publicPath } from '../utils/publicPath'
 
 type LoadingScreenProps = {
   progress: number
@@ -56,7 +57,7 @@ export const LoadingScreen = forwardRef<HTMLDivElement, LoadingScreenProps>(func
     >
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-soft-light"
-        style={{ backgroundImage: 'url(/assets/moodboard-hero.png)' }}
+        style={{ backgroundImage: `url(${publicPath('assets/moodboard-hero.png')})` }}
         aria-hidden
       />
       <div

@@ -7,6 +7,7 @@ import { useBoot } from '../context/BootContext'
 import { useGyro } from '../hooks/useGyro'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { gsap } from '../utils/gsapContext'
+import { publicPath } from '../utils/publicPath'
 
 const MoonScene = lazy(async () => {
   const m = await import('../components/MoonScene')
@@ -215,7 +216,7 @@ export function Hero() {
         <div
           ref={moodboardRef}
           className="hero-moodboard absolute inset-[-6%] bg-cover bg-center bg-no-repeat opacity-[0.34] mix-blend-soft-light will-change-transform"
-          style={{ backgroundImage: 'url(/assets/moodboard-hero.png)' }}
+          style={{ backgroundImage: `url(${publicPath('assets/moodboard-hero.png')})` }}
           aria-hidden
         />
       </div>

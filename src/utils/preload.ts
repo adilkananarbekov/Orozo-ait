@@ -1,9 +1,15 @@
-const STORY = Array.from({ length: 6 }, (_, i) => `/assets/story/shot-${String(i + 1).padStart(2, '0')}.jpg`)
-const BLESSINGS = Array.from({ length: 6 }, (_, i) => `/assets/blessings/blessing-${String(i + 1).padStart(2, '0')}.jpg`)
+import { publicPath } from './publicPath'
+
+const STORY = Array.from({ length: 6 }, (_, i) =>
+  publicPath(`assets/story/shot-${String(i + 1).padStart(2, '0')}.jpg`),
+)
+const BLESSINGS = Array.from({ length: 6 }, (_, i) =>
+  publicPath(`assets/blessings/blessing-${String(i + 1).padStart(2, '0')}.jpg`),
+)
 
 export const PRELOAD_IMAGE_URLS = [...STORY, ...BLESSINGS]
 
-export const MOON_MODEL_URL = '/models/moon.glb'
+export const MOON_MODEL_URL = publicPath('models/moon.glb')
 
 function loadImage(src: string): Promise<void> {
   return new Promise((resolve) => {

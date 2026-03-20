@@ -3,7 +3,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { ContactShadows, Float, Sparkles, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
-const MOON_GLB = '/models/moon.glb'
+import { publicPath } from '../utils/publicPath'
+
+const MOON_GLB = publicPath('models/moon.glb')
 
 void useGLTF.preload(MOON_GLB)
 

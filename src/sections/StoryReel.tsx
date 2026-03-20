@@ -2,40 +2,41 @@ import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
 import { gsap } from '../utils/gsapContext'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+import { publicPath } from '../utils/publicPath'
 
 const SHOTS = [
   {
-    src: '/assets/story/shot-01.jpg',
+    src: publicPath('assets/story/shot-01.jpg'),
     label: 'Майрамдык учур',
     title: 'Милдеттүү түнөн кийинки таң',
     subtitle: 'Биринчи нур — колуңуз менен сезе ала турган ыраазычылык сыяктуу.',
   },
   {
-    src: '/assets/story/shot-02.jpg',
+    src: publicPath('assets/story/shot-02.jpg'),
     label: 'Майрамдык учур',
     title: 'Сүйүү менен жайылган дасторкон',
     subtitle: 'Ар бир табакта үйдө күткөн адамдарыңыз эскерилет.',
   },
   {
-    src: '/assets/story/shot-03.jpg',
+    src: publicPath('assets/story/shot-03.jpg'),
     label: 'Майрамдык учур',
     title: 'Эшиктин алдындагы тынчтык',
     subtitle: 'Эшик ачык болсун: тынчтык жана жакшы кабарлар кирсин.',
   },
   {
-    src: '/assets/story/shot-04.jpg',
+    src: publicPath('assets/story/shot-04.jpg'),
     label: 'Майрамдык учур',
     title: 'Шаардын үстүндөгү кечки алтын',
     subtitle: 'Асман эстетет: нур ар дайым кайтып келет.',
   },
   {
-    src: '/assets/story/shot-05.jpg',
+    src: publicPath('assets/story/shot-05.jpg'),
     label: 'Майрамдык учур',
     title: 'Дуба менен нанды кармаган колдор',
     subtitle: 'Бул кыймылда — элдин бүткүл тарыхы жатат.',
   },
   {
-    src: '/assets/story/shot-06.jpg',
+    src: publicPath('assets/story/shot-06.jpg'),
     label: 'Майрамдык учур',
     title: 'Коридордогу балдардын күлкүсү',
     subtitle: 'Жер жүзүндөгү эң таза музыка ушул.',

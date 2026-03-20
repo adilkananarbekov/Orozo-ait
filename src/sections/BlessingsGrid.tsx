@@ -4,47 +4,48 @@ import { createPortal } from 'react-dom'
 import { BlessingPanel } from '../components/BlessingPanel'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { gsap } from '../utils/gsapContext'
+import { publicPath } from '../utils/publicPath'
 
 const BLESSINGS = [
   {
     title: 'Тынчтык',
     preview: 'Үйүңөргө ынтымак менен тынчтык кеңейсин.',
-    image: '/assets/blessings/blessing-01.jpg',
+    image: publicPath('assets/blessings/blessing-01.jpg'),
     verse:
       'Үйүңөргө салам ортосун кирсин — тынчтык, кеңдик жана меймандосуктук сыяктуу эшик ачык тургандай ыраазылык болсун. Ар бир кадамыңыз жакындарыңызга жакшылык алып келсин, өлкөңүзгө тынчтык орносун.',
   },
   {
     title: 'Нур',
     preview: 'Жүрөгүңүздөгү жарык эч качан өчпөсүн.',
-    image: '/assets/blessings/blessing-02.jpg',
+    image: publicPath('assets/blessings/blessing-02.jpg'),
     verse:
       'Жүрөгүңүздөгү нур эч качан өчпөсүн — аны менен үй-бүлөңүз жылысын, жолуңузду издегендер табышсын. Майрам түндөгү фонарь сыяктуу, сиздин жакшылыгыңыз башкаларга жол көрсөтсүн.',
   },
   {
     title: 'Кечирим',
     preview: 'Өткөн күн оордон эмес, жеңилик менен жаңылансын.',
-    image: '/assets/blessings/blessing-03.jpg',
+    image: publicPath('assets/blessings/blessing-03.jpg'),
     verse:
       'Өткөнүңүз жеңил болсун — майрам түндөгү көрдүн жумшак чөбү сыяктуу, аны шыпырууга болот. Кечирим жаңы бет ачат; жүрөгүңүз жеңил болуп, келечекке кең ачылсын.',
   },
   {
     title: 'Урук',
     preview: 'Тамырыңыз сизди эстеп, бутактары нурга умтулсун.',
-    image: '/assets/blessings/blessing-04.jpg',
+    image: publicPath('assets/blessings/blessing-04.jpg'),
     verse:
       'Уругуңуздун тамыры сизди эстеп турсун, бутактары нурга умтулсун. Сиз — асман менен жердин ортосундагы жылуу байланыссыз; ар бир муунга мурас катары мейирим калтырыңыз.',
   },
   {
     title: 'Ден соолук',
     preview: 'Ар бир демиңиз — Алла Тааланын белеги болсун.',
-    image: '/assets/blessings/blessing-05.jpg',
+    image: publicPath('assets/blessings/blessing-05.jpg'),
     verse:
       'Денеңиз намазга чыдай берсин, жаныңыз ыраазычылык менен толсун. Ар бир дем алыш — жеңил белек болсун; оору-сыркоодон Алла Таала сактап, узак өмүр жана күч берип турсун.',
   },
   {
     title: 'Береке',
     preview: 'Толук дасторкон жана ачык колдордун берекеси көп болсун.',
-    image: '/assets/blessings/blessing-06.jpg',
+    image: publicPath('assets/blessings/blessing-06.jpg'),
     verse:
       'Дасторконуңуз толук болсун, колдоруңуз ачык болсун; ошондо асман айткан баракат көбөйөт. Бөлүшкөн нан эки эсе таттуу болот — майрамыңыз ушул мейирим менен улансын.',
   },
