@@ -1,0 +1,40 @@
+@import '@fontsource/bricolage-grotesque/400.css';
+@import '@fontsource/bricolage-grotesque/600.css';
+@import '@fontsource/bricolage-grotesque/700.css';
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+  body {
+    @apply bg-void text-cream font-body antialiased;
+    overflow-x: hidden;
+    background-image: linear-gradient(180deg, #1a0a32 0%, #12081f 45%, #0a0514 100%);
+    background-attachment: fixed;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+.lux-noise {
+  filter: url(#lux-noise-filter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}
