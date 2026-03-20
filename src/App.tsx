@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useEffect, useRef, type CSSProperties } from 'react'
 import { BlessingsGrid } from './sections/BlessingsGrid'
 import { FinalBlessing } from './sections/FinalBlessing'
 import { Hero } from './sections/Hero'
@@ -192,8 +192,44 @@ function SideOrnament({ side }: { side: OrnamentSide }) {
 }
 
 function GlobalBackdrop() {
+  const root = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const backdrop = root.current
+    if (!backdrop) return
+
+    let frame = 0
+
+    const update = () => {
+      frame = 0
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
+      const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0
+      const normalized = Math.min(1, Math.max(0, (progress - 0.72) / 0.2))
+      const eased = 1 - Math.pow(1 - normalized, 3)
+      const shift = eased * 220
+      const opacity = 0.96 - eased * 0.78
+
+      backdrop.style.setProperty('--skyline-shift', `${shift}px`)
+      backdrop.style.setProperty('--skyline-opacity', `${Math.max(0.12, opacity)}`)
+    }
+
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update)
+    }
+
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [])
+
   return (
-    <div className="global-backdrop" aria-hidden>
+    <div ref={root} className="global-backdrop" aria-hidden>
       <div className="global-backdrop__veil" />
       <div className="global-backdrop__shadow global-backdrop__shadow--left" />
       <div className="global-backdrop__shadow global-backdrop__shadow--center" />

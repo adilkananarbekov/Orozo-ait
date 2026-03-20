@@ -89,6 +89,8 @@ body::-webkit-scrollbar-corner {
   z-index: 25;
   overflow: hidden;
   pointer-events: none;
+  --skyline-shift: 0px;
+  --skyline-opacity: 0.96;
 }
 
 .global-backdrop__veil {
@@ -137,7 +139,9 @@ body::-webkit-scrollbar-corner {
   bottom: 0;
   height: clamp(11rem, 24vw, 19rem);
   overflow: hidden;
-  opacity: 0.96;
+  opacity: var(--skyline-opacity);
+  transform: translate3d(0, var(--skyline-shift), 0);
+  will-change: transform, opacity;
 }
 
 .skyline {
