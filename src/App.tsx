@@ -51,8 +51,18 @@ export default function App() {
         <StoryReel />
         <BlessingsGrid />
         <FinalBlessing />
-        <footer className="relative z-10 border-t border-gold/10 bg-night/40 py-10 text-center text-xs uppercase tracking-[0.35em] text-gold/45">
-          Орозо Айт · Майрамыңыз кут болсун
+        <footer className="relative z-10 overflow-hidden border-t border-gold/10 bg-night/70 py-10 text-center">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,222,145,0.07),transparent_45%)]" />
+          <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-3 px-5 md:px-10">
+            <p className="text-[10px] uppercase tracking-[0.45em] text-gold/55">Орозо Айт</p>
+            <p className="font-display text-lg text-[#f3ddb0] md:text-xl">Майрамыңыздар кут болсун</p>
+            <p className="text-xs uppercase tracking-[0.32em] text-gold/40">
+              Жарык • Береке • Ынтымак
+            </p>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-gold/35">
+              From Anarbekov Adilkan
+            </p>
+          </div>
         </footer>
       </main>
     </>

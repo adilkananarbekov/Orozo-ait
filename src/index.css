@@ -30,11 +30,45 @@
   filter: url(#lux-noise-filter);
 }
 
+.blessing-float {
+  animation: blessingFloat 6.8s ease-in-out infinite;
+}
+
+.blessing-glow {
+  animation: blessingGlow 5.2s ease-in-out infinite;
+}
+
+@keyframes blessingFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0.45rem, -0.7rem, 0) scale(1.04) rotate(3deg);
+  }
+}
+
+@keyframes blessingGlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.12);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .animate-marquee {
+    animation: none !important;
+  }
+  .blessing-float,
+  .blessing-glow {
     animation: none !important;
   }
 }
