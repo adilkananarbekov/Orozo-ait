@@ -7,7 +7,7 @@ export function WonderMarquee() {
       className="relative z-20 overflow-hidden border-y border-gold/10 bg-[#100718]"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,224,145,0.08),transparent_52%),linear-gradient(180deg,rgba(26,13,40,0.96)_0%,rgba(16,7,24,0.98)_100%)]" />
-      <div className="relative mx-auto max-w-6xl px-5 py-8 md:px-10 md:py-10">
+      <div className="relative z-30 mx-auto max-w-6xl px-5 py-8 md:px-10 md:py-10">
         <div className="mb-4 flex flex-col gap-3 md:mb-5 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.45em] text-gold/75 md:text-[11px]">

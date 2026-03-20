@@ -54,7 +54,7 @@ export function FinalBlessing() {
       aria-labelledby="final-blessing-heading"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_80%,rgba(230,192,104,0.08),transparent_50%),radial-gradient(ellipse_at_18%_24%,rgba(200,155,191,0.08),transparent_30%)]" />
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative z-30 mx-auto max-w-5xl">
         <div
           data-final-panel
           className="relative overflow-hidden rounded-[2.1rem] border border-gold/15 bg-[#1a0e26]/72 p-8 shadow-bloom backdrop-blur-2xl md:p-14"

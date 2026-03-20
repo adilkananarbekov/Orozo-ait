@@ -454,7 +454,7 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[100dvh] max-w-7xl flex-col px-5 pb-12 pt-5 md:px-10 md:pb-16 md:pt-7">
+      <div className="relative z-30 mx-auto flex min-h-[100dvh] max-w-7xl flex-col px-5 pb-12 pt-5 md:px-10 md:pb-16 md:pt-7">
         <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.45em] text-[#f7dfa0]/60 md:text-[11px]">
           <div className="flex items-center gap-3">
             <div
@@ -594,7 +594,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="hero-scroll-hint pointer-events-none absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/60">
+      <div className="hero-scroll-hint pointer-events-none absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 flex-col items-center gap-2 text-gold/60">
         <span className="text-[10px] uppercase tracking-[0.45em]">Төмөн жылдырыңыз</span>
         <svg
           className="hero-scroll-chevron h-6 w-6 text-gold"

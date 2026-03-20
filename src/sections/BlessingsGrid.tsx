@@ -217,7 +217,7 @@ export function BlessingsGrid() {
       className="relative z-10 overflow-hidden bg-gradient-to-b from-[#13091d] via-[#160a24] to-[#0e0717] px-5 py-24 md:px-10 md:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(230,192,104,0.06),transparent_55%),radial-gradient(ellipse_at_80%_20%,rgba(200,155,191,0.06),transparent_32%)]" />
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative z-30 mx-auto max-w-6xl">
         <header className="mb-12 grid gap-6 lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-end">
           <div className="max-w-3xl">
             <p className="font-body text-xs font-semibold uppercase tracking-[0.45em] text-gold/80">

@@ -139,7 +139,7 @@ export function StoryReel() {
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_18%_14%,rgba(255,225,148,0.08),transparent_35%),radial-gradient(ellipse_at_78%_26%,rgba(200,155,191,0.08),transparent_30%),linear-gradient(180deg,rgba(15,7,24,1)_0%,rgba(13,6,21,0.98)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/35 to-transparent" />
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative z-30 mx-auto max-w-6xl">
         <header className="mb-16 grid gap-6 md:mb-20 md:grid-cols-[minmax(0,1fr)_18rem] md:items-end">
           <div className="max-w-3xl">
             <p className="font-body text-xs uppercase tracking-[0.4em] text-gold/80">Майрамдын көз ирмеми</p>
