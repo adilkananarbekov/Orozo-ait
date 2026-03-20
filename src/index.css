@@ -328,6 +328,16 @@ body::-webkit-scrollbar-corner {
   }
 }
 
+@media (max-width: 768px) {
+  .side-ornament {
+    display: none;
+  }
+
+  .global-backdrop__mesh {
+    inset-inline: 1rem;
+  }
+}
+
 @media (max-width: 640px) {
   .global-backdrop__skyline {
     height: 8.9rem;
@@ -347,20 +357,5 @@ body::-webkit-scrollbar-corner {
   .global-backdrop__mesh {
     inset: 8% 8%;
     opacity: 0.11;
-  }
-
-  .side-ornament {
-    top: 5.5rem;
-    bottom: 5.5rem;
-    width: 2.75rem;
-    opacity: 0.72;
-  }
-
-  .side-ornament__panel::before {
-    inset: 0.55rem;
-  }
-
-  .side-ornament__panel::after {
-    inset: 0.9rem 42%;
   }
 }
