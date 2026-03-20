@@ -10,6 +10,14 @@ npm install
 npm run dev
 ```
 
+## GitHub Pages
+
+**URL:** [adilkananarbekov.github.io/Orozo-ait](https://adilkananarbekov.github.io/Orozo-ait/)
+
+Pushes to `main` run [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) and publish the `dist` folder.
+
+**One-time:** In the repo, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. After the first successful run, the site is available at the URL above (production builds use Vite `base` `/Orozo-ait/`).
+
 ## Create from scratch (reference)
 
 ```bash
