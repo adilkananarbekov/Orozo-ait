@@ -1,20 +1,7 @@
 import { publicPath } from './publicPath'
 
-const STORY = Array.from({ length: 6 }, (_, i) =>
-  publicPath(`assets/story/shot-${String(i + 1).padStart(2, '0')}.jpg`),
-)
-const BLESSINGS = Array.from({ length: 6 }, (_, i) =>
-  publicPath(`assets/blessings/blessing-${String(i + 1).padStart(2, '0')}.jpg`),
-)
-const SCENE = [
-  publicPath('assets/scene/lamp.png'),
-  publicPath('assets/scene/crescent.png'),
-  publicPath('assets/scene/text-kg.png'),
-  publicPath('assets/scene/mosque-desktop.png'),
-  publicPath('assets/scene/mosque-mobile.png'),
-]
-
-export const PRELOAD_IMAGE_URLS = [...SCENE, ...STORY, ...BLESSINGS]
+// Keep startup light on mobile: below-the-fold cards and story images stay lazy-loaded.
+export const PRELOAD_IMAGE_URLS = [publicPath('assets/moodboard-hero.png')]
 
 function loadImage(src: string): Promise<void> {
   return new Promise((resolve) => {

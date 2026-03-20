@@ -57,7 +57,7 @@ export function FinalBlessing() {
       <div className="relative z-30 mx-auto max-w-5xl">
         <div
           data-final-panel
-          className="relative overflow-hidden rounded-[2.1rem] border border-gold/15 bg-[#1a0e26]/72 p-8 shadow-bloom backdrop-blur-2xl md:p-14"
+          className="relative overflow-hidden rounded-[2.1rem] border border-gold/15 bg-[#1a0e26]/82 p-8 shadow-bloom md:p-14 md:backdrop-blur-2xl"
         >
           <div
             className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-amber/15 blur-3xl"
@@ -89,21 +89,21 @@ export function FinalBlessing() {
                 data-final-line
                 className="mt-5 font-display text-3xl font-semibold leading-tight text-parchment md:text-[2.8rem]"
               >
-                Майрамдын жарыгы жүрөгүңүздө кала берсин
+                Нооруздун жылуулугу жүрөгүңүздө кала берсин
               </h2>
               <p
                 data-final-line
                 className="mt-6 max-w-3xl font-body text-base leading-8 text-cream/80 md:text-xl"
               >
-                Бул Орозо Айт үйүңүздөргө таттуулук, жүрөгүңүздөргө сабыр, дасторконуңуздарга береке жана
-                ар бир жаңы күнүңүздөргө мээрим алып келсин. Жакындарыңыздар менен бөлүшкөн ар бир кубаныч
-                эстеликке айланып, бул майрам узак жылуулук болуп сакталсын.
+                Бул Нооруз үйүңүздөргө жаңы дем, жүрөгүңүздөргө жарык үмүт, дасторконуңуздарга мол береке
+                жана ар бир жаңы күнүңүздөргө көктөмдөй жандуу маанай алып келсин. Жакындарыңыздар менен
+                бөлүшкөн ар бир кубаныч эстеликке айланып, бул майрам узак жылуулук болуп сакталсын.
               </p>
               <p
                 data-final-line
                 className="mt-8 font-display text-sm font-semibold uppercase tracking-[0.35em] text-gold/95"
               >
-                Айт маарек болсун!
+                Нооруз кут болсун!
               </p>
             </div>
 
@@ -115,7 +115,7 @@ export function FinalBlessing() {
               </div>
               <div data-final-line>
                 <MagneticButton href="#story" className="w-full justify-center md:w-auto">
-                  Кадрларды көрүү
+                  Ирмемдерди көрүү
                 </MagneticButton>
               </div>
             </div>

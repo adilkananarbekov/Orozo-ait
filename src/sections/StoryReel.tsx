@@ -1,5 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
+import { useMobilePerformanceMode } from '../hooks/useMobilePerformanceMode'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { gsap } from '../utils/gsapContext'
 import { publicPath } from '../utils/publicPath'
@@ -7,47 +8,48 @@ import { publicPath } from '../utils/publicPath'
 const SHOTS = [
   {
     src: publicPath('assets/story/shot-01.jpg'),
-    label: 'Таңкы нур',
-    title: 'Орозо Айттын алгачкы таңы',
-    subtitle: 'Күн жаңыдан көтөрүлгөндө дуба менен толгон аба бүт айылды жумшак жарыкка бөлөйт.',
+    label: 'Таңкы дем',
+    title: 'Нооруздун алгачкы таңы',
+    subtitle: 'Күн жаңы көтөрүлгөндө абада жаздын жеңил деми сезилип, бүт айлана жумшак жарыкка толот.',
   },
   {
     src: publicPath('assets/story/shot-02.jpg'),
     label: 'Дасторкон',
     title: 'Береке менен жайылган дасторкон',
-    subtitle: 'Ар бир таттуу, ар бир чыны чай бул күнү бөлүшүүнүн жана ыраазычылыктын белгисине айланат.',
+    subtitle: 'Нооруздагы ар бир даам, ар бир чыны чай бөлүшүүнүн, токчулуктун жана ыраазычылыктын белгиси болуп калат.',
   },
   {
     src: publicPath('assets/story/shot-03.jpg'),
     label: 'Жолугушуу',
-    title: 'Эшик алдындагы жылуу салам',
-    subtitle: 'Майрамдын эң кооз жери ушул: бири-бирине ачык жүз менен жолуккан адамдар.',
+    title: 'Босогодогу жылуу салам',
+    subtitle: 'Майрамдын эң кооз жери ушул: бири-бирине ачык жүз менен жолуккан адамдар жана жаңыланган маанай.',
   },
   {
     src: publicPath('assets/story/shot-04.jpg'),
-    label: 'Кечки асман',
-    title: 'Шаардын үстүндөгү алтын тынчтык',
-    subtitle: 'Кечки жарык майрам бүткөндөн кийин да жүрөктө кала турган назик эстеликти жаратат.',
+    label: 'Кечки жарык',
+    title: 'Көктөмгө толгон тынч асман',
+    subtitle: 'Кечки жарык майрам бүткөндөн кийин да жүрөктө кала турган назик, жылуу эстеликти жаратат.',
   },
   {
     src: publicPath('assets/story/shot-05.jpg'),
-    label: 'Дуба',
-    title: 'Колдордогу мээрим жана тилек',
-    subtitle: 'Чын дилден айтылган ар бир бата бул күндү дагы да терең жана маңыздуу кылат.',
+    label: 'Тилек',
+    title: 'Жаңы жылга айтылган ак сөз',
+    subtitle: 'Чын дилден айтылган ар бир тилек бул күндү дагы да терең, жаркын жана эсте каларлык кылат.',
   },
   {
     src: publicPath('assets/story/shot-06.jpg'),
     label: 'Кубаныч',
-    title: 'Балдардын күлкүсү чыккан ирмем',
-    subtitle: 'Майрамдын тазалыгы көбүнчө дал ушундай жөнөкөй, бирок абдан жарык көз ирмемдерде жашайт.',
+    title: 'Балдардын шаңы чыккан ирмем',
+    subtitle: 'Нооруздун тазалыгы көбүнчө дал ушундай жөнөкөй, бирок абдан жарык жана тирүү көз ирмемдерде жашайт.',
   },
 ] as const
 
-const STORY_CHIPS = ['6 кадр', 'Жылуу атмосфера', 'Кыргызча куттуктоо']
+const STORY_CHIPS = ['6 кадр', 'Көктөм маанайы', 'Кыргызча куттуктоо']
 
 export function StoryReel() {
   const section = useRef<HTMLElement>(null)
   const reduced = usePrefersReducedMotion()
+  const mobileLite = useMobilePerformanceMode()
 
   useGSAP(
     () => {
@@ -63,7 +65,19 @@ export function StoryReel() {
         const fromRight = i % 2 === 1
         const hidden = fromRight ? 'inset(0% 0% 0% 100%)' : 'inset(0% 100% 0% 0%)'
 
-        if (!reduced) {
+        if (mobileLite && !reduced) {
+          gsap.from(block, {
+            y: 28,
+            opacity: 0,
+            duration: 0.72,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: block,
+              start: 'top 88%',
+              toggleActions: 'play none none none',
+            },
+          })
+        } else if (!reduced) {
           gsap.set(block, { clipPath: hidden })
           gsap.to(block, {
             clipPath: 'inset(0% 0% 0% 0%)',
@@ -97,7 +111,7 @@ export function StoryReel() {
           gsap.set(block, { clearProps: 'clipPath' })
         }
 
-        if (img && !reduced) {
+        if (img && !reduced && !mobileLite) {
           gsap.to(img, {
             yPercent: -18,
             scale: 1.04,
@@ -111,7 +125,7 @@ export function StoryReel() {
           })
         }
 
-        if (panel && !reduced) {
+        if (panel && !reduced && !mobileLite) {
           gsap.from(panel, {
             y: 42,
             x: fromRight ? 26 : -26,
@@ -128,7 +142,7 @@ export function StoryReel() {
         }
       })
     },
-    { scope: section, dependencies: [reduced] },
+    { scope: section, dependencies: [mobileLite, reduced] },
   )
 
   return (
@@ -144,18 +158,18 @@ export function StoryReel() {
           <div className="max-w-3xl">
             <p className="font-body text-xs uppercase tracking-[0.4em] text-gold/80">Майрамдын көз ирмеми</p>
             <h2 className="mt-4 font-display text-3xl font-semibold text-parchment md:text-5xl">
-              Орозо Айттын жылуулугун алып жүргөн кадрлар
+              Нооруздун жылуулугун алып жүргөн кадрлар
             </h2>
             <p className="mt-4 max-w-2xl font-body text-sm leading-7 text-cream/72 md:text-base">
-              Бул бөлүм hero’догу майрамдык атмосфераны чыныгы турмуштун көз ирмемдерине улайт:
-              дуба, дасторкон, жолугушуу жана балалык кубаныч.
+              Бул бөлүм hero’догу нооруздук атмосфераны турмуштагы чыныгы көз ирмемдерге улайт:
+              таңкы дем, дасторкон, жолугушуу жана жаңы тилектер.
             </p>
           </div>
-          <div className="rounded-[1.8rem] border border-gold/15 bg-[#171022]/72 p-5 shadow-bloom backdrop-blur-xl">
+          <div className="rounded-[1.8rem] border border-gold/15 bg-[#171022]/78 p-5 shadow-bloom md:backdrop-blur-xl">
             <p className="text-[10px] uppercase tracking-[0.42em] text-gold/75">Scene note</p>
             <p className="mt-3 text-sm leading-7 text-cream/72">
               Ар бир карточкада сүрөт үстүнөн жумшак cinematic overlay жана кезектешкен маалымат
-              панели бар. Бул ритм бетти бир калыпта эмес, жандуу кылат.
+              панели бар. Бул ритм Нооруздун жай, бирок жандуу демин сактап турат.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {STORY_CHIPS.map((chip) => (
@@ -212,7 +226,7 @@ export function StoryReel() {
 
                 <div
                   data-story-panel
-                  className={`relative z-[1] mx-4 -mt-16 rounded-[1.65rem] border border-gold/15 bg-[#12081f]/78 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.32)] backdrop-blur-xl md:absolute md:bottom-8 md:mx-0 md:max-w-[25rem] md:p-6 ${
+                  className={`relative z-[1] mx-4 -mt-16 rounded-[1.65rem] border border-gold/15 bg-[#12081f]/84 p-5 shadow-[0_20px_50px_rgba(0,0,0,0.32)] md:absolute md:bottom-8 md:mx-0 md:max-w-[25rem] md:p-6 md:backdrop-blur-xl ${
                     fromRight ? 'md:right-8' : 'md:left-8'
                   }`}
                 >

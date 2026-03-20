@@ -1,5 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
+import { useMobilePerformanceMode } from '../hooks/useMobilePerformanceMode'
 import { gsap } from '../utils/gsapContext'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 
@@ -19,12 +20,13 @@ export function MagneticButton({
   const root = useRef<HTMLDivElement>(null)
   const inner = useRef<HTMLSpanElement>(null)
   const reduced = usePrefersReducedMotion()
+  const mobileLite = useMobilePerformanceMode()
 
   useGSAP(
     () => {
       const wrap = root.current
       const target = inner.current
-      if (!wrap || !target || reduced) return
+      if (!wrap || !target || reduced || mobileLite) return
 
       const xTo = gsap.quickTo(target, 'x', { duration: 0.45, ease: 'power3.out' })
       const yTo = gsap.quickTo(target, 'y', { duration: 0.45, ease: 'power3.out' })
@@ -51,7 +53,7 @@ export function MagneticButton({
         wrap.removeEventListener('pointerleave', onLeave)
       }
     },
-    { scope: root, dependencies: [reduced] },
+    { scope: root, dependencies: [mobileLite, reduced] },
   )
 
   const content = (
@@ -63,7 +65,7 @@ export function MagneticButton({
     </span>
   )
 
-  const shell = `relative inline-flex overflow-hidden rounded-full border border-gold/50 bg-[#1f1028]/70 px-8 py-3 text-sm font-semibold text-parchment shadow-gold backdrop-blur-md transition-colors hover:border-amber/70 hover:bg-[#2a1835]/80 md:text-base ${className}`
+  const shell = `relative inline-flex overflow-hidden rounded-full border border-gold/50 bg-[#1f1028]/78 px-8 py-3 text-sm font-semibold text-parchment shadow-gold transition-colors hover:border-amber/70 hover:bg-[#2a1835]/80 md:text-base md:backdrop-blur-md ${className}`
 
   if (href) {
     return (

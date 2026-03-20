@@ -1,11 +1,11 @@
 const SEGMENT =
-  'АЙТ МААРЕК БОЛСУН • ОРОЗО АЙТ • БЕРЕКЕ • НУР • ДУБА • ЫНТЫМАК • ТЫНЧТЫК • '
+  'НООРУЗ КУТ БОЛСУН • КӨКТӨМ • ЖАҢЫЛАНУУ • БЕРЕКЕ • ЫНТЫМАК • ДАСТОРКОН • КУБАНЫЧ • '
 
 export function Marquee() {
   const text = SEGMENT.repeat(5)
 
   return (
-    <div className="relative overflow-hidden rounded-[1.75rem] border border-gold/15 bg-[#1a0d28]/72 px-0 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.3)] backdrop-blur-xl md:py-5">
+    <div className="relative overflow-hidden rounded-[1.75rem] border border-gold/15 bg-[#1a0d28]/78 px-0 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.3)] md:py-5 md:backdrop-blur-xl">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,230,162,0.09),transparent_42%),linear-gradient(90deg,rgba(232,152,60,0.08),transparent_24%,transparent_76%,rgba(200,155,191,0.08))]" />
       <div
         className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/80 to-transparent"
@@ -32,7 +32,7 @@ export function Marquee() {
           </span>
         </div>
         <div
-          className="flex w-max animate-marquee font-display text-[11px] font-semibold uppercase tracking-[0.42em] text-[#f4deb0]/40 md:text-xs"
+          className="hidden w-max animate-marquee font-display text-[11px] font-semibold uppercase tracking-[0.42em] text-[#f4deb0]/40 md:flex md:text-xs"
           style={{ animationDirection: 'reverse', animationDuration: '36s' }}
           aria-hidden
         >
