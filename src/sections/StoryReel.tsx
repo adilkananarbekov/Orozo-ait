@@ -9,14 +9,14 @@ const SHOTS = [
   {
     src: publicPath('assets/story/shot-01.jpg'),
     label: 'Таңкы нур',
-    title: 'Орозо Айттын алгачкы таңы',
-    subtitle: 'Күн жаңыдан көтөрүлгөндө дуба менен толгон аба бүт айылды жумшак жарыкка бөлөйт.',
+    title: 'Курман айттын алгачкы таңы',
+    subtitle: 'Таңкы намазга чогулган жүрөктөр дуба менен жумшарып, жаңы күн береке менен ачылат.',
   },
   {
     src: publicPath('assets/story/shot-02.jpg'),
     label: 'Дасторкон',
     title: 'Береке менен жайылган дасторкон',
-    subtitle: 'Ар бир таттуу, ар бир чыны чай бул күнү бөлүшүүнүн жана ыраазычылыктын белгисине айланат.',
+    subtitle: 'Ар бир таттуу, ар бир чыны чай жана ар бир бөлүшүлгөн даам ыраазычылыктын белгисине айланат.',
   },
   {
     src: publicPath('assets/story/shot-03.jpg'),
@@ -158,15 +158,15 @@ export function StoryReel() {
           <div className="max-w-3xl">
             <p className="font-body text-xs uppercase tracking-[0.4em] text-gold/80">Майрамдын көз ирмеми</p>
             <h2 className="mt-4 font-display text-3xl font-semibold text-parchment md:text-5xl">
-              Орозо Айттын жылуулугун алып жүргөн кадрлар
+              Курман айттын жылуулугун алып жүргөн кадрлар
             </h2>
             <p className="mt-4 max-w-2xl font-body text-sm leading-7 text-cream/72 md:text-base">
-              Бул бөлүм hero’догу майрамдык атмосфераны чыныгы турмуштун көз ирмемдерине улайт:
-              дуба, дасторкон, жолугушуу жана балалык кубаныч.
+              Бул бөлүм майрамдык атмосфераны чыныгы турмуштун көз ирмемдерине улайт:
+              айт намазы, дасторкон, жолугушуу, бөлүшүү жана балалык кубаныч.
             </p>
           </div>
           <div className="rounded-[1.8rem] border border-gold/15 bg-[#171022]/78 p-5 shadow-bloom md:backdrop-blur-xl">
-            <p className="text-[10px] uppercase tracking-[0.42em] text-gold/75">Scene note</p>
+            <p className="text-[10px] uppercase tracking-[0.42em] text-gold/75">Майрамдык ритм</p>
             <p className="mt-3 text-sm leading-7 text-cream/72">
               Ар бир карточкада сүрөт үстүнөн жумшак cinematic overlay жана кезектешкен маалымат
               панели бар. Бул ритм бетти бир калыпта эмес, жандуу кылат.

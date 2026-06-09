@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { imagetools } from 'vite-imagetools'
 
-export default defineConfig(({ command }) => ({
-  base: process.env.SITE_BASE ?? (command === 'build' ? '/Orozo-ait/' : '/'),
+export default defineConfig(() => ({
+  base: process.env.SITE_BASE ?? '/',
   plugins: [react(), imagetools()],
   build: {
     rollupOptions: {

@@ -20,7 +20,7 @@ for ($i = 1; $i -le 6; $i++) {
   $brush.Dispose()
   $font = New-Object System.Drawing.Font("Segoe UI", 40, [System.Drawing.FontStyle]::Bold)
   $sb = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(248, 243, 232))
-  $g.DrawString("Orozo Ait - Moment $i", $font, $sb, 70, 70)
+  $g.DrawString("Kurman Ait - Moment $i", $font, $sb, 70, 70)
   $path = Join-Path $base ("assets\story\shot-{0:D2}.jpg" -f $i)
   $bmp.Save($path, [System.Drawing.Imaging.ImageFormat]::Jpeg)
   $font.Dispose()

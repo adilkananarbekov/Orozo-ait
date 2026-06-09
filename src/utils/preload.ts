@@ -3,7 +3,6 @@ import { publicPath } from './publicPath'
 const SCENE = [
   publicPath('assets/scene/lamp.png'),
   publicPath('assets/scene/crescent.png'),
-  publicPath('assets/scene/text-kg.png'),
   publicPath('assets/scene/mosque-desktop.png'),
   publicPath('assets/scene/mosque-mobile.png'),
 ]

@@ -104,7 +104,6 @@ const SCENE_LAMPS = [
 
 const LAMP_URL = publicPath('assets/scene/lamp.png')
 const CRESCENT_URL = publicPath('assets/scene/crescent.png')
-const TEXT_URL = publicPath('assets/scene/text-kg.png')
 const MOSQUE_DESKTOP_URL = publicPath('assets/scene/mosque-desktop.png')
 const MOSQUE_MOBILE_URL = publicPath('assets/scene/mosque-mobile.png')
 
@@ -543,15 +542,14 @@ export function Hero() {
 
             <div
               ref={textRef}
-              className="absolute left-[57%] top-[17%] z-40 w-[10rem] -translate-x-1/2 sm:w-[11.5rem] md:left-[61%] md:top-[18%] md:w-[21rem]"
+              className="absolute left-[57%] top-[18%] z-40 w-[12rem] -translate-x-1/2 text-center sm:w-[14rem] md:left-[61%] md:top-[19%] md:w-[24rem]"
             >
-              <img
-                src={TEXT_URL}
-                alt="Айт Маарек болсун"
-                className="h-auto w-full mix-blend-screen contrast-[1.06] brightness-[1.04] drop-shadow-[0_0_38px_rgba(255,218,130,0.34)]"
-                loading="eager"
-                draggable={false}
-              />
+              <p className="font-body text-[0.58rem] font-semibold uppercase tracking-[0.4em] text-gold/75 [text-shadow:0_0_24px_rgba(255,218,130,0.32)] sm:text-[0.68rem] md:text-[0.86rem]">
+                Айт маарек болсун
+              </p>
+              <p className="mt-2 font-display text-[2.1rem] font-bold uppercase leading-[0.9] tracking-[0.08em] text-[#f7dfa0] mix-blend-screen drop-shadow-[0_0_38px_rgba(255,218,130,0.34)] sm:text-[2.55rem] md:text-[5.1rem]">
+                Курман айт
+              </p>
             </div>
 
             <div
@@ -581,14 +579,14 @@ export function Hero() {
               className="mx-auto w-full max-w-[22rem] rounded-[1.75rem] border border-[#f7dfa0]/12 bg-[#12081f]/84 p-4 shadow-bloom sm:max-w-md sm:rounded-[2rem] sm:p-5 md:mx-0 md:mb-6 md:max-w-[24rem] md:bg-[#12081f]/36 md:p-6 md:backdrop-blur-xl"
             >
               <p className="hero-copy-line text-xs uppercase tracking-[0.4em] text-gold/80">
-                Касиеттүү майрам
+                Курман айт майрамы
               </p>
               <h1 className="hero-copy-line mt-3 font-display text-[2.1rem] font-bold leading-[0.96] text-parchment sm:text-3xl md:text-5xl">
-                Орозо Айт кут болсун
+                Курман айт кут болсун
               </h1>
               <p className="hero-copy-line mt-4 text-[0.98rem] leading-8 text-cream/85 sm:text-sm sm:leading-7 md:text-base">
-                Жүрөгүңүздөргө тынчтык, үйүңүздөргө береке, дасторконуңуздарга кубаныч жана
-                жакындарыңыздарга нур толсун.
+                Курмандык ниетиңиздер кабыл болуп, үйүңүздөргө береке, жүрөгүңүздөргө мээрим,
+                жакындарыңыздарга тынчтык жана кубаныч толсун.
               </p>
               <div className="hero-copy-line mt-6 flex flex-wrap gap-4">
                 <MagneticButton href="#story">Майрамдык ирмемдер</MagneticButton>

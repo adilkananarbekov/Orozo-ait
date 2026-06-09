@@ -17,7 +17,7 @@ const BLESSINGS = [
     preview: 'Үйүңүздөргө ынтымак менен токтоолук орносун.',
     image: CARD_ART[0],
     verse:
-      'Үйүңүздөрдүн босогосунан тынчтык аттап кирсин. Ар бир бөлмөдө жумшак сөз, кең пейил жана бири-бириңиздерге болгон урмат көбөйсүн. Орозо Айт күнү жүрөгүңүздөрдү жеңилдетип, үй-бүлөңүздөргө узакка сакталчу бейпилдик тартууласын.',
+      'Үйүңүздөрдүн босогосунан тынчтык аттап кирсин. Ар бир бөлмөдө жумшак сөз, кең пейил жана бири-бириңиздерге болгон урмат көбөйсүн. Курман айт күнү жүрөгүңүздөрдү жеңилдетип, үй-бүлөңүздөргө узакка сакталчу бейпилдик тартууласын.',
   },
   {
     title: 'Нур',
@@ -52,7 +52,7 @@ const BLESSINGS = [
     preview: 'Дасторконуңуздар толуп, ниетиңиздер кең болсун.',
     image: CARD_ART[1],
     verse:
-      'Дасторконуңуздарга береке, колуңуздарга кеңдик жана жүрөгүңүздөргө ыраазычылык берилсин. Бөлүшүлгөн нан дагы даамдуу, бөлүшүлгөн кубаныч дагы кымбат болот. Бул Орозо Айт үйүңүздөрдү токчулук жана мээрим менен толтурсун.',
+      'Дасторконуңуздарга береке, колуңуздарга кеңдик жана жүрөгүңүздөргө ыраазычылык берилсин. Бөлүшүлгөн нан дагы даамдуу, бөлүшүлгөн кубаныч дагы кымбат болот. Бул Курман айт үйүңүздөрдү токчулук жана мээрим менен толтурсун.',
   },
 ] as const
 
@@ -224,7 +224,7 @@ export function BlessingsGrid() {
               Бата жана тилектер
             </p>
             <h2 className="mt-3 font-display text-3xl font-bold text-parchment sm:text-4xl md:text-5xl">
-              Орозо Айтка арналган жылуу баталар
+              Курман айтка арналган жылуу баталар
             </h2>
             <p className="mt-4 max-w-2xl font-body text-sm leading-7 text-cream/72 sm:text-base">
               Бул бөлүмдө майрамдык куттуктоону тереңдеткен алты кыска бата бар. Каалаганыңызды ачып,
@@ -232,7 +232,7 @@ export function BlessingsGrid() {
             </p>
           </div>
           <div className="rounded-[1.8rem] border border-gold/15 bg-[#171022]/78 p-5 shadow-bloom md:backdrop-blur-xl">
-            <p className="text-[10px] uppercase tracking-[0.42em] text-gold/75">Blessing set</p>
+            <p className="text-[10px] uppercase tracking-[0.42em] text-gold/75">Баталар топтому</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {CHIPS.map((chip) => (
                 <span
@@ -266,8 +266,8 @@ export function BlessingsGrid() {
               Бата бөлүшүлгөндө дагы да кооз угулат
             </h3>
             <p className="mt-4 text-sm leading-7 text-cream/72">
-              Бул жерден өзүңүзгө жаккан тилекти тандап, сайттагы жалпы куттуктоонун tone’уна жараша
-              текст катары колдонсоңуз болот.
+              Бул жерден өзүңүзгө жаккан тилекти тандап, Курман айт куттуктоосунун жылуу маанайына
+              жараша текст катары колдонсоңуз болот.
             </p>
             <div className="mt-6 space-y-3">
               <div className="rounded-2xl border border-gold/12 bg-[#1b1029]/78 p-4">
@@ -276,7 +276,7 @@ export function BlessingsGrid() {
               </div>
               <div className="rounded-2xl border border-gold/12 bg-[#1b1029]/78 p-4">
                 <p className="text-[10px] uppercase tracking-[0.34em] text-gold/78">2-кадам</p>
-                <p className="mt-2 text-sm text-cream/76">Кайсы стиль сайтыңызга туура келерин тандаңыз.</p>
+                <p className="mt-2 text-sm text-cream/76">Кайсы тилек жүрөгүңүзгө жакын экенин тандаңыз.</p>
               </div>
               <div className="rounded-2xl border border-gold/12 bg-[#1b1029]/78 p-4">
                 <p className="text-[10px] uppercase tracking-[0.34em] text-gold/78">3-кадам</p>

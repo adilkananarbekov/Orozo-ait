@@ -11,12 +11,12 @@ $modelsDir = Join-Path $root 'models'
 
 for ($i = 1; $i -le 6; $i++) {
   $dest = Join-Path $storyDir ("shot-{0:D2}.jpg" -f $i)
-  curl.exe -fsSL -o $dest "https://picsum.photos/seed/orozoaitstory$i/1920/1080.jpg"
+  curl.exe -fsSL -o $dest "https://picsum.photos/seed/kurmanaitstory$i/1920/1080.jpg"
 }
 
 for ($i = 1; $i -le 6; $i++) {
   $dest = Join-Path $blessDir ("blessing-{0:D2}.jpg" -f $i)
-  curl.exe -fsSL -o $dest "https://picsum.photos/seed/orozoaitbless$i/1200/1500.jpg"
+  curl.exe -fsSL -o $dest "https://picsum.photos/seed/kurmanaitbless$i/1200/1500.jpg"
 }
 
 $moonSrc = Join-Path (Split-Path $PSScriptRoot -Parent) 'moon.glb'
